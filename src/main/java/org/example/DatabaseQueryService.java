@@ -38,9 +38,9 @@ public class DatabaseQueryService {
     private List<FindLongestProject> setFindLongestProject() {
         List<FindLongestProject> projectsList = new ArrayList<>();
         String sqlQuery = readSqlFile(DatabaseProperty.findLongestProject());
-        Connection connection = Database.getInstance().getConnection();
 
-        try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 projectsList.add(new FindLongestProject(
@@ -57,8 +57,9 @@ public class DatabaseQueryService {
     private List<MaxProjectCountClient> findMaxProjectsClient() {
         List<MaxProjectCountClient> projectCountList = new ArrayList<>();
         String sqlQuery = readSqlFile(DatabaseProperty.findMaxProjectsClient());
-        Connection connection = Database.getInstance().getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 projectCountList.add(new MaxProjectCountClient(
@@ -75,8 +76,9 @@ public class DatabaseQueryService {
     private List<MaxSalaryWorker> findMaxSalaryWorker() {
         List<MaxSalaryWorker> maxSalaryList = new ArrayList<>();
         String sqlQuery = readSqlFile(DatabaseProperty.findMaxSalaryWorker());
-        Connection connection = Database.getInstance().getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 maxSalaryList.add(new MaxSalaryWorker(
@@ -93,8 +95,9 @@ public class DatabaseQueryService {
     private List<ProjectPrice> printProjectPrices() {
         List<ProjectPrice> projectPriceList = new ArrayList<>();
         String sqlQuery = readSqlFile(DatabaseProperty.printProjectPrices());
-        Connection connection = Database.getInstance().getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 projectPriceList.add(new ProjectPrice(
@@ -111,8 +114,9 @@ public class DatabaseQueryService {
     private List<YoungestEldestWorkers> findYoungestEldestWorkers() {
         List<YoungestEldestWorkers> workerList  = new ArrayList<>();
         String sqlQuery = readSqlFile(DatabaseProperty.findYoungestEldestWorkers());
-        Connection connection = Database.getInstance().getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 workerList.add(new YoungestEldestWorkers(

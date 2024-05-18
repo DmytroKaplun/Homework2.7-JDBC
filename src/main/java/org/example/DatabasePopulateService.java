@@ -14,8 +14,9 @@ public class DatabasePopulateService {
 
     public void executeSqlFile(String filePath) {
         String sqlQuery = readSqlFile(filePath);
-        Connection connection = Database.getInstance().getConnection();
-        try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

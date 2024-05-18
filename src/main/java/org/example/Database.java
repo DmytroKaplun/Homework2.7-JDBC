@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Database {
-    private final Connection connection;
     private static final HikariConfig config = new HikariConfig();
     private static final HikariDataSource ds;
 
@@ -20,15 +19,10 @@ public class Database {
     }
 
     private Database() {
-        try {
-            connection = ds.getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
-    public Connection getConnection() {
-        return connection;
+    public Connection getConnection() throws SQLException {
+            return ds.getConnection();
     }
 
     private static final class InstanceHolder {
