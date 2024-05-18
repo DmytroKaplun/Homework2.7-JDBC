@@ -1,15 +1,12 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import org.example.util.DatabaseProperty;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-import static org.example.DbUtil.readSqlFile;
+import static org.example.util.SqlReader.readSqlFile;
 
 
 public class DatabaseInitService {

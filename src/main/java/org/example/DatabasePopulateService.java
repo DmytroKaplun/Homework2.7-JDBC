@@ -1,8 +1,10 @@
 package org.example;
 
+import org.example.util.DatabaseProperty;
+
 import java.sql.*;
 
-import static org.example.DbUtil.readSqlFile;
+import static org.example.util.SqlReader.readSqlFile;
 
 public class DatabasePopulateService {
     public static void main(String[] args) {

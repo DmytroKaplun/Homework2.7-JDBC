@@ -1,4 +1,4 @@
-package org.example.resultset.object;
+package org.example.resultsetObject;
 
 import java.math.BigDecimal;
 

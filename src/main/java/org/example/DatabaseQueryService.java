@@ -1,13 +1,14 @@
 package org.example;
 
-import org.example.resultset.object.*;
+import org.example.resultsetObject.*;
+import org.example.util.DatabaseProperty;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.DbUtil.readSqlFile;
+import static org.example.util.SqlReader.readSqlFile;
 
 public class DatabaseQueryService {
     public static void main(String[] args) {

@@ -1,4 +1,6 @@
-package org.example;
+package org.example.util;
+
+import org.example.Database;
 
 import java.io.IOException;
 import java.io.InputStream;
